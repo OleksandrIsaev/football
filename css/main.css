@@ -17,12 +17,13 @@ body{
   box-sizing: border-box;
 }
 .header{
+  display: flex;
+  justify-content: space-between;
   padding: 25px 0;
 }
-.logo,
-.logo p,
-.logo img{
-  float: left;
+.logo{
+  align-items: center;
+  display: flex;
 }
 .logo p,
 .phone-number p{
@@ -42,10 +43,14 @@ body{
   color: #5a5a5a;
 }
 .logo img{
+  width: 50px;
   transition: all 1s ease;
+  transform: rotate(350deg);
 }
 .logo img:hover{
+  width: 80px;
   padding-left: 200px;
+  transform: rotate(350deg);
 }
 .slider{
   width: 100%;
@@ -54,7 +59,8 @@ body{
   margin-left: 35px;
 }
 .phone-number{
-  float: right;
+  display: flex;
+  justify-content: space-between;
 }
 .phone-number a{
   color: #39930d;
@@ -69,11 +75,14 @@ body{
   width: 100%;
 }
 .main{
+  display: flex;
+  column-gap: 10px;
   margin-bottom: 45px;
 }
 .content{
+  padding-right: 10px;
   float: left;
-  max-width: 600px;
+  width: 70%;
 }
 .content h1{
   font-size: 24px;
@@ -85,7 +94,6 @@ body{
   color: #343434;
 } 
 .menu{
-  float: right;
   width: 300px;
 }
 .menu p{
@@ -118,4 +126,38 @@ body{
   font-size: 14px;
   color: #fff;
   background-color: #39930d;
+}
+@media screen and (max-width: 600px){
+  .header{
+    flex-direction: column;
+    text-align: center;
+  }
+  .phone-number i,
+  .phone-number a{
+    display: block;
+    text-align: center;
+  }
+  .slider{
+    height: 200px;
+    object-fit: cover;
+  }
+  .header i{
+    text-align: center;
+  }
+  .main{
+    flex-direction: column-reverse;
+  }
+  .main,
+  .content{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 370px){
+  .logo{
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo img{
+    margin: 10px 0 20px;
+  }
 }
