@@ -131,6 +131,7 @@ body{
   .header{
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
   .phone-number i,
   .phone-number a{
